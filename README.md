@@ -150,7 +150,7 @@ csharp_sistema_hospitalar/
 - Observe no console do sistema C# que o alerta externo foi recebido e registrado.
 - Também é possível utilizar um módulo ESP32 para uma simulação mais imersiva
 
-### 4. Sincronização com Servidor Externo (Opcional)
+### 4. Sincronização com Servidor Externo (Funcionalidade Futura)
 - Em outro terminal, rode o **Servidor de Teste**:
 
   cd ServidorTesteSync
@@ -174,3 +174,7 @@ csharp_sistema_hospitalar/
 - O arquivo `data/usuarios.json` é criptografado via `JsonCryptoStorage`.  
 - Validações de CPF, idade e campos obrigatórios são feitas em `MenuPrincipal`.  
 - Exceções de I/O e HTTP são tratadas em `try-catch` para garantir que o sistema não trave em uso normal.
+
+### Observação
+
+- A funcionalidade de **Sincronização com a Nuvem** está marcada como *Coming Soon*.

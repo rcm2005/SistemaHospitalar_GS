@@ -48,7 +48,7 @@ namespace SistemaHospitalarApp.Services
             Console.WriteLine("3. Modificar Paciente");
             Console.WriteLine("4. Deletar Paciente");
             Console.WriteLine("5. Visualizar Logs de Eventos");
-            Console.WriteLine("6. Sincronizar com a Nuvem");
+            Console.WriteLine("6. Sincronizar com a Nuvem (Em breve)");
             Console.WriteLine("7. Gerar alerta de teste");
             Console.WriteLine("8. Sair");
             Console.Write("\nEscolha uma opção: ");
