@@ -70,5 +70,18 @@ namespace SistemaHospitalarApp.Services
                 u.Nome.Equals(nome.Trim(), StringComparison.OrdinalIgnoreCase) &&
                 u.Senha == senha);
         }
+
+        public static void AtualizarUsuarioPorIndice(int indice, Usuario usuarioAtualizado)
+        {
+            var usuarios = ObterUsuarios();
+            if (indice < 0 || indice >= usuarios.Count)
+            {
+                throw new IndexOutOfRangeException("Índice de usuário inválido.");
+            }
+
+            usuarios[indice] = usuarioAtualizado;
+            JsonCryptoStorage.Salvar(CaminhoArquivo, usuarios);
+        }
+
     }
 }
