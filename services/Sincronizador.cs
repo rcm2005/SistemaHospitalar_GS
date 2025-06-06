@@ -1,35 +1,65 @@
 using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
+using SistemaHospitalarApp.Models;
 using SistemaHospitalarApp.Services;
 
 namespace SistemaHospitalarApp.Services
 {
     public class Sincronizador
     {
+        private const string UrlSync = "http://localhost:6000/sync";
+        private static readonly HttpClient _httpClient = new HttpClient();
+
         public bool Conectado { get; private set; }
 
         public Sincronizador()
         {
-            Conectado = true; // simula que começa conectado
+            Conectado = false;
         }
 
-        public void VerificarConexao()
+        public async Task SincronizarAsync()
         {
-            var random = new Random();
-            // 30% de chance de perder conexão
-            Conectado = random.NextDouble() > 0.3;
-        }
-
-        public void Sincronizar(MainframeLocal mainframe)
-        {
-            if (Conectado)
+            try
             {
-                Console.WriteLine("[✔] Dados sincronizados com a nuvem.");
-                mainframe.Logs.Add(new Models.LogEvento("Sincronização bem-sucedida com a nuvem."));
+                // Monta o pacote de dados locais: Pacientes + Logs
+                var pacientes = PacienteService.ObterPacientes();
+                var logs = LogService.ObterLogs();
+
+                var pacote = new
+                {
+                    Timestamp = DateTime.Now,
+                    Pacientes = pacientes,
+                    Logs = logs
+                };
+
+                string json = JsonSerializer.Serialize(pacote, new JsonSerializerOptions { WriteIndented = true });
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                // Envia via POST para a URL definida
+                var response = await _httpClient.PostAsync(UrlSync, content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    Conectado = true;
+                    Console.WriteLine("[✔] Dados sincronizados com o servidor na nuvem.");
+                    LogService.SalvarLog(new LogEvento("Sincronização bem-sucedida com a nuvem.", DateTime.Now, "SINCRONIZAÇÃO"));
+                }
+                else
+                {
+                    Conectado = false;
+                    Console.WriteLine($"[✘] Erro na sincronização (HTTP {(int)response.StatusCode}). Modo offline.");
+                    LogService.SalvarLog(new LogEvento($"Falha na sincronização. Código HTTP: {(int)response.StatusCode}", DateTime.Now, "ERRO"));
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("[✘] Sem conexão com a nuvem. Operando em modo offline.");
-                mainframe.Logs.Add(new Models.LogEvento("Falha na sincronização. Modo offline ativado."));
+                Conectado = false;
+                Console.WriteLine($"[✘] Sem conexão com a nuvem. Modo offline. Erro: {ex.Message}");
+                LogService.SalvarLog(new LogEvento($"Erro durante sincronização: {ex.Message}", DateTime.Now, "ERRO"));
             }
         }
     }

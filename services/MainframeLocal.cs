@@ -1,32 +1,31 @@
-using System.Collections.Generic;
+using System;
 using SistemaHospitalarApp.Models;
 
 namespace SistemaHospitalarApp.Services
 {
     public class MainframeLocal
     {
-        public List<Falha> FalhasRegistradas { get; private set; } = new();
-        public List<Alerta> AlertasGerados { get; private set; } = new();
-        public List<LogEvento> Logs { get; private set; } = new();
-
-        public void RegistrarFalha(Falha falha)
+        public void ProcessarFalha(Falha falha)
         {
-            FalhasRegistradas.Add(falha);
-            Logs.Add(new LogEvento($"Falha registrada: {falha.Tipo}"));
-        }
+            try
+            {
+                if (falha == null)
+                {
+                    Console.WriteLine("Falha inválida para processar.");
+                    return;
+                }
 
-        public void GerarAlerta(string nivel, string mensagem)
-        {
-            var alerta = new Alerta(nivel, mensagem);
-            AlertasGerados.Add(alerta);
-            alerta.Exibir();
-            Logs.Add(new LogEvento($"Alerta gerado: {mensagem}"));
-        }
+                var log = new LogEvento(falha.Mensagem, DateTime.Now, falha.Tipo);
+                LogService.SalvarLog(log);
 
-        public void ExibirLogs()
-        {
-            foreach (var log in Logs)
-                Console.WriteLine(log);
+                var alerta = new Alerta("MainframeLocal", $"Falha crítica: {falha.Mensagem}", "Crítica");
+                alerta.Exibir();
+                LogService.SalvarLog(new LogEvento("Alerta emitido com sucesso", DateTime.Now, "ALERTA"));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao processar falha no MainframeLocal: {ex.Message}");
+            }
         }
     }
 }

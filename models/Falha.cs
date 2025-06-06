@@ -4,20 +4,24 @@ namespace SistemaHospitalarApp.Models
 {
     public class Falha
     {
-        public DateTime DataHora { get; set; }
-        public string Tipo { get; set; }  // Ex: "Energia", "Conexão", "Equipamento"
-        public string Descricao { get; set; }
+        public string Mensagem { get; private set; }
+        public string Tipo { get; private set; }
 
-        public Falha(string tipo, string descricao)
+        public Falha(string mensagem, string tipo)
         {
-            DataHora = DateTime.Now;
+            if (string.IsNullOrWhiteSpace(mensagem))
+                throw new ArgumentException("A mensagem da falha não pode ser vazia.");
+
+            if (string.IsNullOrWhiteSpace(tipo))
+                throw new ArgumentException("O tipo da falha não pode ser vazio.");
+
+            Mensagem = mensagem;
             Tipo = tipo;
-            Descricao = descricao;
         }
 
         public override string ToString()
         {
-            return $"[{DataHora}] Falha: {Tipo} - {Descricao}";
+            return $"Falha [{Tipo}]: {Mensagem}";
         }
     }
 }
