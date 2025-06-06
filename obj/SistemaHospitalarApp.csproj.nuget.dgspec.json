@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rcm20\\Downloads\\SistemaHospitalarApp_FinalCorrigidoV4\\SistemaHospitalarApp.csproj": {}
+    "C:\\Users\\rcm20\\Desktop\\SistemaHospitalar_GS\\SistemaHospitalarApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rcm20\\Downloads\\SistemaHospitalarApp_FinalCorrigidoV4\\SistemaHospitalarApp.csproj": {
+    "C:\\Users\\rcm20\\Desktop\\SistemaHospitalar_GS\\SistemaHospitalarApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rcm20\\Downloads\\SistemaHospitalarApp_FinalCorrigidoV4\\SistemaHospitalarApp.csproj",
+        "projectUniqueName": "C:\\Users\\rcm20\\Desktop\\SistemaHospitalar_GS\\SistemaHospitalarApp.csproj",
         "projectName": "SistemaHospitalarApp",
-        "projectPath": "C:\\Users\\rcm20\\Downloads\\SistemaHospitalarApp_FinalCorrigidoV4\\SistemaHospitalarApp.csproj",
+        "projectPath": "C:\\Users\\rcm20\\Desktop\\SistemaHospitalar_GS\\SistemaHospitalarApp.csproj",
         "packagesPath": "C:\\Users\\rcm20\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rcm20\\Downloads\\SistemaHospitalarApp_FinalCorrigidoV4\\obj\\",
+        "outputPath": "C:\\Users\\rcm20\\Desktop\\SistemaHospitalar_GS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rcm20\\AppData\\Roaming\\NuGet\\NuGet.Config"
