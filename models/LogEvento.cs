@@ -4,28 +4,46 @@ namespace SistemaHospitalarApp.Models
 {
     public class LogEvento
     {
-        // Propriedades somente leitura
-        public string Mensagem { get; }
-        public DateTime Horario { get; }
-        public string Tipo { get; }
+        public string Origem { get; set; }
+        public string Mensagem { get; set; }
+        public string Gravidade { get; set; }
+        public DateTime DataHora { get; set; }
 
-        // Construtor com validações
+        public LogEvento()
+        {
+            Origem = "";
+            Mensagem = "";
+            Gravidade = "";
+            DataHora = DateTime.Now;
+        }
+
+        public LogEvento(string origem, string mensagem, string gravidade, DateTime dataHora)
+        {
+            Origem = origem;
+            Mensagem = mensagem;
+            Gravidade = gravidade;
+            DataHora = dataHora;
+        }
+
+        public LogEvento(string origem, string mensagem, string gravidade)
+        {
+            Origem = origem;
+            Mensagem = mensagem;
+            Gravidade = gravidade;
+            DataHora = DateTime.Now;
+        }
+
         public LogEvento(string mensagem, DateTime horario, string tipo)
         {
-            if (string.IsNullOrWhiteSpace(mensagem))
-                throw new ArgumentException("A mensagem do log não pode ser vazia.");
-
-            if (string.IsNullOrWhiteSpace(tipo))
-                throw new ArgumentException("O tipo do log não pode ser vazio.");
-
+            Origem = "Sistema";
             Mensagem = mensagem;
-            Horario = horario;
-            Tipo = tipo;
+            Gravidade = tipo;
+            DataHora = horario;
         }
 
         public override string ToString()
         {
-            return $"[{Horario:dd/MM/yyyy HH:mm:ss}] ({Tipo.ToUpper()}) {Mensagem}";
+            return $"[{DataHora:dd/MM/yyyy HH:mm:ss}] (ALERTA) Origem: {Origem} | Mensagem: {Mensagem} | Gravidade: {Gravidade}";
         }
     }
 }

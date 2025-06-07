@@ -83,5 +83,18 @@ namespace SistemaHospitalarApp.Services
             JsonCryptoStorage.Salvar(CaminhoArquivo, usuarios);
         }
 
+        public static void RemoverUsuarioPorIndice(int indice)
+        {
+            var usuarios = ObterUsuarios();
+            if (indice < 0 || indice >= usuarios.Count)
+            {
+                throw new IndexOutOfRangeException("Índice de usuário inválido.");
+            }
+
+            usuarios.RemoveAt(indice);
+            JsonCryptoStorage.Salvar(CaminhoArquivo, usuarios);
+        }
+
+
     }
 }

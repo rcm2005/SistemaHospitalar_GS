@@ -5,7 +5,6 @@ class Program
 {
     static void Main()
     {
-        // 1) Se não há usuários salvos, força cadastro antes de qualquer login
         while (true)
         {
             var todosUsuarios = UsuarioService.ObterUsuarios();
@@ -26,7 +25,6 @@ class Program
             break;
         }
 
-        // 2) Menu de login/cadastro
         while (true)
         {
             Console.Clear();
@@ -91,9 +89,11 @@ class Program
                 return;
             }
 
-            // 3) Login bem-sucedido: inicializa o listener antes de abrir o menu principal
             AlertaListener.Iniciar();
             Console.WriteLine("\n[INFO] AlertaListener iniciado. Aguardando requisições POST em /alerta/ …");
+
+            LogService.CarregarLogs();
+
             Console.WriteLine("Pressione ENTER para abrir o Menu Principal.");
             Console.ReadLine();
 
@@ -107,9 +107,6 @@ class Program
         }
     }
 
-    /// <summary>
-    /// Tenta cadastrar um usuário e retorna true se gravou com sucesso.
-    /// </summary>
     static bool CadastrarUsuario()
     {
         Console.Clear();

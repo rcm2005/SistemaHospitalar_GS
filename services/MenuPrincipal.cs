@@ -41,22 +41,6 @@ namespace SistemaHospitalarApp.Services
             }
         }
 
-        private static void MenuAdmin()
-        {
-            Console.WriteLine("1. Cadastrar Paciente");
-            Console.WriteLine("2. Visualizar Pacientes");
-            Console.WriteLine("3. Modificar Paciente");
-            Console.WriteLine("4. Deletar Paciente");
-            Console.WriteLine("5. Visualizar Logs de Eventos");
-            Console.WriteLine("6. Sincronizar com a Nuvem (Em breve)");
-            Console.WriteLine("7. Gerar alerta de teste");
-            Console.WriteLine("8. Sair");
-            Console.Write("\nEscolha uma opção: ");
-
-            string? opcao = Console.ReadLine();
-            ExecutarOpcaoAdmin(opcao);
-        }
-
         private static void ExecutarOpcaoAdmin(string? opcao)
         {
             switch (opcao)
@@ -85,11 +69,177 @@ namespace SistemaHospitalarApp.Services
                 case "8":
                     Environment.Exit(0);
                     break;
+                case "9":
+                    GerenciarUsuarios();
+                    break;
                 default:
                     Console.WriteLine("Opção inválida.");
                     break;
             }
         }
+
+        private static void GerenciarUsuarios()
+        {
+            try
+            {
+                var usuarios = UsuarioService.ObterUsuarios();
+                if (usuarios == null || usuarios.Count == 0)
+                {
+                    Console.WriteLine("Não há usuários cadastrados.");
+                    return;
+                }
+
+                Console.WriteLine("=== Lista de Usuários Cadastrados ===");
+                for (int i = 0; i < usuarios.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1}. Nome: {usuarios[i].Nome} | Cargo: {usuarios[i].Cargo}");
+                }
+
+                Console.Write("\nDigite o número do usuário que deseja EDITAR ou DELETAR (ou pressione Enter para voltar): ");
+                string? selecionadoTxt = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(selecionadoTxt))
+                {
+                    Console.WriteLine("Voltando ao menu.");
+                    return;
+                }
+
+                if (!int.TryParse(selecionadoTxt, out int indice) ||
+                    indice < 1 || indice > usuarios.Count)
+                {
+                    Console.WriteLine("Opção inválida. Voltando ao menu.");
+                    return;
+                }
+
+                int idxZeroBased = indice - 1;
+                var usuarioOriginal = usuarios[idxZeroBased];
+
+                Console.WriteLine($"\n--- Dados Atuais do Usuário ({usuarioOriginal.Nome}) ---");
+                Console.WriteLine($"1. Nome: {usuarioOriginal.Nome}");
+                Console.WriteLine($"2. Senha: (não exibida)");
+                Console.WriteLine($"3. Cargo: {usuarioOriginal.Cargo}");
+                Console.WriteLine("-------------------------------\n");
+
+                Console.Write("Deseja (E)ditar ou (D)eletar este usuário? ");
+                string? acao = Console.ReadLine()?.Trim().ToUpper();
+
+                if (acao == "D")
+                {
+                    Console.Write($"\nTem certeza que deseja DELETAR o usuário \"{usuarioOriginal.Nome}\"? (S/N): ");
+                    string? confirm = Console.ReadLine();
+
+                    if (!string.IsNullOrWhiteSpace(confirm) &&
+                        (confirm.Trim().Equals("S", StringComparison.OrdinalIgnoreCase) ||
+                        confirm.Trim().Equals("SIM", StringComparison.OrdinalIgnoreCase)))
+                    {
+                        UsuarioService.RemoverUsuarioPorIndice(idxZeroBased);
+                        Console.WriteLine($"\nUsuário \"{usuarioOriginal.Nome}\" deletado com sucesso!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nOperação cancelada. Nenhum usuário foi deletado.");
+                    }
+
+                    return;
+                }
+                else if (acao == "E")
+                {
+                    string novoNome;
+                    while (true)
+                    {
+                        Console.Write("Novo nome (pressione Enter para manter): ");
+                        string? campoNome = Console.ReadLine();
+                        if (string.IsNullOrWhiteSpace(campoNome))
+                        {
+                            novoNome = usuarioOriginal.Nome;
+                            break;
+                        }
+                        campoNome = campoNome.Trim();
+                        if (campoNome.Length > 0)
+                        {
+                            novoNome = campoNome;
+                            break;
+                        }
+                        Console.WriteLine("Nome não pode ficar vazio. Tente novamente ou pressione Enter para manter.");
+                    }
+
+                    string novaSenha;
+                    while (true)
+                    {
+                        Console.Write("Nova senha (pressione Enter para manter): ");
+                        string? campoSenha = Console.ReadLine();
+                        if (string.IsNullOrWhiteSpace(campoSenha))
+                        {
+                            novaSenha = usuarioOriginal.Senha;
+                            break;
+                        }
+                        campoSenha = campoSenha.Trim();
+                        if (campoSenha.Length > 0)
+                        {
+                            novaSenha = campoSenha;
+                            break;
+                        }
+                        Console.WriteLine("Senha não pode ficar vazia. Tente novamente ou pressione Enter para manter.");
+                    }
+
+                    string novoCargo;
+                    while (true)
+                    {
+                        Console.Write("Novo cargo (Admin, Técnico, Médico) [pressione Enter para manter]: ");
+                        string? campoCargo = Console.ReadLine();
+                        if (string.IsNullOrWhiteSpace(campoCargo))
+                        {
+                            novoCargo = usuarioOriginal.Cargo;
+                            break;
+                        }
+                        campoCargo = campoCargo.Trim();
+                        if (campoCargo.Equals("Admin", StringComparison.OrdinalIgnoreCase) ||
+                            campoCargo.Equals("Técnico", StringComparison.OrdinalIgnoreCase) ||
+                            campoCargo.Equals("Tecnico", StringComparison.OrdinalIgnoreCase) ||
+                            campoCargo.Equals("Médico", StringComparison.OrdinalIgnoreCase) ||
+                            campoCargo.Equals("Medico", StringComparison.OrdinalIgnoreCase))
+                        {
+                            novoCargo = campoCargo;
+                            break;
+                        }
+                        Console.WriteLine("Cargo inválido. Informe Admin, Técnico ou Médico, ou pressione Enter para manter.");
+                    }
+
+                    var usuarioAtualizado = new Usuario(novoNome, novaSenha, novoCargo);
+                    UsuarioService.AtualizarUsuarioPorIndice(idxZeroBased, usuarioAtualizado);
+
+                    Console.WriteLine("\nUsuário atualizado com sucesso!");
+                }
+                else
+                {
+                    Console.WriteLine("Opção inválida. Voltando ao menu.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao gerenciar usuários: {ex.Message}");
+            }
+        }
+
+
+        private static void MenuAdmin()
+        {
+            Console.WriteLine("1. Cadastrar Paciente");
+            Console.WriteLine("2. Visualizar Pacientes");
+            Console.WriteLine("3. Modificar Paciente");
+            Console.WriteLine("4. Deletar Paciente");
+            Console.WriteLine("5. Visualizar Logs de Eventos");
+            Console.WriteLine("6. Sincronizar com a Nuvem");
+            Console.WriteLine("7. Gerar alerta de teste");
+            Console.WriteLine("8. Sair");
+            Console.WriteLine("9. Gerenciar Usuários");
+            Console.Write("\nEscolha uma opção: ");
+
+            string? opcao = Console.ReadLine();
+            ExecutarOpcaoAdmin(opcao);
+        }
+
+
+       
 
         private static void MenuTecnico()
         {
@@ -123,9 +273,11 @@ namespace SistemaHospitalarApp.Services
         private static void MenuMedico()
         {
             Console.WriteLine("1. Cadastrar Paciente");
-            Console.WriteLine("2. Visualizar Logs de Eventos");
-            Console.WriteLine("3. Gerar alerta de teste");
-            Console.WriteLine("4. Sair");
+            Console.WriteLine("2. Visualizar Pacientes");
+            Console.WriteLine("3. Modificar Paciente");
+            Console.WriteLine("4. Deletar Paciente");
+            Console.WriteLine("5. Visualizar Logs de Eventos");
+            Console.WriteLine("6. Sair");
             Console.Write("\nEscolha uma opção: ");
 
             string? opcao = Console.ReadLine();
@@ -135,12 +287,18 @@ namespace SistemaHospitalarApp.Services
                     CadastrarPaciente();
                     break;
                 case "2":
-                    VisualizarLogs();
+                    VisualizarPacientes();
                     break;
                 case "3":
-                    GerarAlertaDeTeste();
+                    ModificarPaciente();
                     break;
                 case "4":
+                    DeletarPaciente();
+                    break;
+                case "5":
+                    VisualizarLogs();
+                    break;
+                case "6":
                     Environment.Exit(0);
                     break;
                 default:
@@ -148,6 +306,9 @@ namespace SistemaHospitalarApp.Services
                     break;
             }
         }
+
+
+    
 
         private static void CadastrarPaciente()
         {

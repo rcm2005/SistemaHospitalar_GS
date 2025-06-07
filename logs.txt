@@ -1,0 +1,52 @@
+[06/06/2025 22:01:26] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:01:26] (ALERTA) Origem: Camera_MediaPipe | Mensagem: OK SIGN detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:01:31] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:01:31] (ALERTA) Origem: Camera_MediaPipe | Mensagem: THUMBS UP detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:01:36] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:01:36] (ALERTA) Origem: Camera_MediaPipe | Mensagem: MÃO LEVANTADA detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:01:41] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:01:41] (ALERTA) Origem: Camera_MediaPipe | Mensagem: MÃO LEVANTADA detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:02:03] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:02:03] (ALERTA) Origem: Camera_MediaPipe | Mensagem: MÃO LEVANTADA detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:19:40] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:19:40] (ALERTA) Origem: ESP32 - Pino 5 | Mensagem: Falha detectada em Monitor Cardiaco | Gravidade: Crítica | Gravidade: ALERTA
+[06/06/2025 22:20:41] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:20:41] (ALERTA) Origem: ESP32 - Pino 4 | Mensagem: Falha detectada em Estacao de Oxigenio | Gravidade: Crítica | Gravidade: ALERTA
+[06/06/2025 22:22:30] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:22:30] (ALERTA) Origem: Camera_MediaPipe | Mensagem: MÃO LEVANTADA detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:22:30] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:22:30] (ALERTA) Origem: Camera_MediaPipe | Mensagem: OK SIGN detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:22:42] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:22:42] (ALERTA) Origem: Camera_MediaPipe | Mensagem: PUNHO FECHADO detectado | Gravidade: Alta | Gravidade: ALERTA
+[06/06/2025 22:22:53] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:22:53] (ALERTA) Origem: Camera_MediaPipe | Mensagem: OK SIGN detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:22:58] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:22:58] (ALERTA) Origem: Camera_MediaPipe | Mensagem: THUMBS UP detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:23:01] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:23:01] (ALERTA) Origem: Camera_MediaPipe | Mensagem: THUMBS UP detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:23:02] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:23:02] (ALERTA) Origem: Camera_MediaPipe | Mensagem: THUMBS UP detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:23:08] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:23:08] (ALERTA) Origem: Camera_MediaPipe | Mensagem: THUMBS UP detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:31:08] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:31:08] (ALERTA) Origem: ESP32 - Pino 4 | Mensagem: Falha detectada em Estacao de Oxigenio | Gravidade: Crítica | Gravidade: ALERTA
+[06/06/2025 22:32:29] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:32:29] (ALERTA) Origem: Camera_MediaPipe | Mensagem: THUMBS UP detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:32:29] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:32:29] (ALERTA) Origem: Camera_MediaPipe | Mensagem: THUMBS UP detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:32:29] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:32:29] (ALERTA) Origem: Camera_MediaPipe | Mensagem: MÃO LEVANTADA detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:32:29] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:32:29] (ALERTA) Origem: Camera_MediaPipe | Mensagem: MÃO LEVANTADA detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:32:29] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:32:29] (ALERTA) Origem: Camera_MediaPipe | Mensagem: MÃO LEVANTADA detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:32:29] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:32:29] (ALERTA) Origem: Camera_MediaPipe | Mensagem: MÃO LEVANTADA detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:43:15] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:43:15] (ALERTA) Origem: Camera_MediaPipe | Mensagem: MÃO LEVANTADA detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:43:15] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:43:15] (ALERTA) Origem: Camera_MediaPipe | Mensagem: OK SIGN detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:43:15] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:43:15] (ALERTA) Origem: Camera_MediaPipe | Mensagem: THUMBS UP detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:43:54] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:43:54] (ALERTA) Origem: Camera_MediaPipe | Mensagem: OK SIGN detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:46:05] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:46:05] (ALERTA) Origem: Camera_MediaPipe | Mensagem: THUMBS UP detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:46:05] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:46:05] (ALERTA) Origem: ESP32 - Pino 4 | Mensagem: Falha detectada em Estacao de Oxigenio | Gravidade: Crítica | Gravidade: ALERTA
+[06/06/2025 22:46:05] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:46:05] (ALERTA) Origem: Camera_MediaPipe | Mensagem: OK SIGN detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:46:05] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:46:05] (ALERTA) Origem: Camera_MediaPipe | Mensagem: MÃO LEVANTADA detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:46:05] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:46:05] (ALERTA) Origem: Camera_MediaPipe | Mensagem: MÃO LEVANTADA detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:46:05] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:46:05] (ALERTA) Origem: Camera_MediaPipe | Mensagem: MÃO LEVANTADA detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:46:05] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:46:05] (ALERTA) Origem: Camera_MediaPipe | Mensagem: MÃO LEVANTADA detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:46:05] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:46:05] (ALERTA) Origem: ESP32 - Pino 4 | Mensagem: Falha detectada em Estacao de Oxigenio | Gravidade: Crítica | Gravidade: ALERTA
+[06/06/2025 22:46:05] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:46:05] (ALERTA) Origem: ESP32 - Pino 5 | Mensagem: Falha detectada em Monitor Cardiaco | Gravidade: Crítica | Gravidade: ALERTA
+[06/06/2025 22:46:07] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:46:07] (ALERTA) Origem: ESP32 - Pino 5 | Mensagem: Falha detectada em Monitor Cardiaco | Gravidade: Crítica | Gravidade: ALERTA
+[06/06/2025 22:46:21] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:46:21] (ALERTA) Origem: ESP32 - Pino 4 | Mensagem: Falha detectada em Estacao de Oxigenio | Gravidade: Crítica | Gravidade: ALERTA
+[06/06/2025 22:46:33] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:46:33] (ALERTA) Origem: ESP32 - Pino 5 | Mensagem: Falha detectada em Monitor Cardiaco | Gravidade: Crítica | Gravidade: ALERTA
+[06/06/2025 22:46:37] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:46:37] (ALERTA) Origem: ESP32 - Pino 18 | Mensagem: Falha detectada em Respirador Mecanico | Gravidade: Crítica | Gravidade: ALERTA
+[06/06/2025 22:47:32] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:47:32] (ALERTA) Origem: Camera_MediaPipe | Mensagem: PUNHO FECHADO detectado | Gravidade: Alta | Gravidade: ALERTA
+[06/06/2025 22:47:32] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:47:32] (ALERTA) Origem: Camera_MediaPipe | Mensagem: MÃO LEVANTADA detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:47:32] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:47:32] (ALERTA) Origem: Camera_MediaPipe | Mensagem: OK SIGN detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:47:41] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:47:41] (ALERTA) Origem: Camera_MediaPipe | Mensagem: MÃO LEVANTADA detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:49:24] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:49:24] (ALERTA) Origem: Camera_MediaPipe | Mensagem: PUNHO FECHADO detectado | Gravidade: Alta | Gravidade: ALERTA
+[06/06/2025 22:49:24] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:49:24] (ALERTA) Origem: Camera_MediaPipe | Mensagem: OK SIGN detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:49:24] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:49:24] (ALERTA) Origem: Camera_MediaPipe | Mensagem: THUMBS UP detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:49:24] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:49:24] (ALERTA) Origem: Camera_MediaPipe | Mensagem: MÃO LEVANTADA detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 22:59:24] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 22:59:24] (ALERTA) Origem: ESP32 - Pino 4 | Mensagem: Falha detectada em Estacao de Oxigenio | Gravidade: Crítica | Gravidade: ALERTA
+[06/06/2025 23:00:34] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 23:00:34] (ALERTA) Origem: Camera_MediaPipe | Mensagem: OK SIGN detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 23:00:34] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 23:00:34] (ALERTA) Origem: Camera_MediaPipe | Mensagem: THUMBS UP detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 23:00:34] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 23:00:34] (ALERTA) Origem: Camera_MediaPipe | Mensagem: THUMBS UP detectado | Gravidade: Normal | Gravidade: ALERTA
+[06/06/2025 23:00:34] (ALERTA) Origem: Sistema | Mensagem: [06/06/2025 23:00:34] (ALERTA) Origem: Camera_MediaPipe | Mensagem: MÃO LEVANTADA detectado | Gravidade: Normal | Gravidade: ALERTA
